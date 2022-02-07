@@ -1,3 +1,10 @@
 <resources>
   <string name="app_name">CardView Layout</string>
+  <string name="buy_now">BUY NOW</string>
+  <string name="learning_java_by_building_android_games">Learning Java by Building Android Games</string>
+  <string name="learn_java_and_android_from_scratch_by_building_6_playable_games">Learn Java and Android from scratch by building 6 playable games</string>
+  <string name="beginning_c_game_programming">Beginning C++ Game Programming</string>
+  <string name="learn_c_from_scratch_by_building_6_playable_games">Learn C++ from scratch by building 6 playable games</string>
+  <string name="android_programming_with_kotlin_for_beginners">Android Programming with Kotlin for Beginners</string>
+  <string name="learn_kotlin_and_android_from_scratch_by_building_6_playable_games">Learn Kotlin and Android from scratch by building 6 playable games</string>
 </resources>

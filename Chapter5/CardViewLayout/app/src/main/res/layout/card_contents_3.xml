@@ -11,7 +11,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    android:text="Android Programming with Kotlin for Beginners"
+    android:text="@string/android_programming_with_kotlin_for_beginners"
     android:textSize="24sp" />
 
   <ImageView
@@ -19,14 +19,15 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    app:srcCompat="@drawable/image_3" />
+    app:srcCompat="@drawable/image_3"
+    android:contentDescription="@string/android_programming_with_kotlin_for_beginners" />
 
   <TextView
     android:id="@+id/textView8"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    android:text="Learn Kotlin and Android from scratch by building 6 playable games"
+    android:text="@string/learn_kotlin_and_android_from_scratch_by_building_6_playable_games"
     android:textSize="16sp" />
 
   <TextView
@@ -34,7 +35,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    android:text="BUY NOW"
+    android:text="@string/buy_now"
     android:textColor="@color/teal_200"
     android:textSize="24sp" />
 </LinearLayout>

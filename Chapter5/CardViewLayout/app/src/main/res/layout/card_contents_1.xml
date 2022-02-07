@@ -11,7 +11,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    android:text="Learning Java by Building Android Games"
+    android:text="@string/learning_java_by_building_android_games"
     android:textSize="24sp" />
 
   <ImageView
@@ -19,14 +19,15 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    app:srcCompat="@drawable/image_1" />
+    app:srcCompat="@drawable/image_1"
+    android:contentDescription="@string/learning_java_by_building_android_games" />
 
   <TextView
     android:id="@+id/textView2"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    android:text="Learn Java and Android from scratch by building 6 playable games"
+    android:text="@string/learn_java_and_android_from_scratch_by_building_6_playable_games"
     android:textSize="16sp" />
 
   <TextView
@@ -34,7 +35,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    android:text="BUY NOW"
+    android:text="@string/buy_now"
     android:textColor="@color/teal_200"
     android:textSize="24sp" />
 </LinearLayout>
