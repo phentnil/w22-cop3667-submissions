@@ -1,22 +1,20 @@
 package com.jasonstarling.lifecycledemo;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.jasonstarling.lifecycledemo.databinding.ActivityMainBinding;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
-
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
-import com.jasonstarling.lifecycledemo.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +41,53 @@ public class MainActivity extends AppCompatActivity {
           .setAction("Action", null).show();
       }
     });
+    Toast.makeText(this, "In onCreate", Toast.LENGTH_SHORT).show();
+    Log.i("info", "In onCreate");
+  }
+
+  @Override
+  public void onStart() {
+    // First call the "official" version of this method
+    super.onStart();
+
+    Toast.makeText(this, "In onStart", Toast.LENGTH_SHORT).show();
+    Log.i("info", "In onStart");
+  }
+
+  @Override
+  public void onResume() {
+    // First call the "official" version of this method
+    super.onResume();
+
+    Toast.makeText(this, "In onResume", Toast.LENGTH_SHORT).show();
+    Log.i("info", "In onResume");
+  }
+
+  @Override
+  public void onPause(){
+    // First call the "official" version of this method
+    super.onPause();
+
+    Toast.makeText(this, "In onPause", Toast.LENGTH_SHORT).show();
+    Log.i("info", "In onPause");
+  }
+
+  @Override
+  public void onStop(){
+    // First call the "official" version of this method
+    super.onStop();
+
+    Toast.makeText(this, "In onStop", Toast.LENGTH_SHORT).show();
+    Log.i("info", "In onStop");
+  }
+
+  @Override
+  public void onDestroy(){
+    // First call the "official" version of this method
+    super.onDestroy();
+
+    Toast.makeText(this, "In onDestroy", Toast.LENGTH_SHORT).show();
+    Log.i("info", "In onDestroy");
   }
 
   @Override
