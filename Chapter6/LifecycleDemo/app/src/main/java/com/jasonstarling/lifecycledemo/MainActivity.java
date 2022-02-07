@@ -94,11 +94,15 @@ public class MainActivity extends AppCompatActivity {
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
     getMenuInflater().inflate(R.menu.menu_main, menu);
+    Toast.makeText(this, "In onCreateOptionsMenu", Toast.LENGTH_SHORT).show();
+    Log.i("info", "In onCreateOptionsMenu");
     return true;
   }
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
+    Toast.makeText(this, "In onOptionsItemSelected", Toast.LENGTH_SHORT).show();
+    Log.i("info", "In onOptionsItemSelected");
     // Handle action bar item clicks here. The action bar will
     // automatically handle clicks on the Home/Up button, so long
     // as you specify a parent activity in AndroidManifest.xml.
@@ -114,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
 
   @Override
   public boolean onSupportNavigateUp() {
+    Toast.makeText(this, "In onSupportNavigateUp", Toast.LENGTH_SHORT).show();
+    Log.i("info", "In onSupportNavigateUp");
     NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
     return NavigationUI.navigateUp(navController, appBarConfiguration)
       || super.onSupportNavigateUp();
