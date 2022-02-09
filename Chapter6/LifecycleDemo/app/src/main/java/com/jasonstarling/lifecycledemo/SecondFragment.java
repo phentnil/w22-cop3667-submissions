@@ -5,11 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jasonstarling.lifecycledemo.databinding.FragmentSecondBinding;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
-
-import com.jasonstarling.lifecycledemo.databinding.FragmentSecondBinding;
 
 public class SecondFragment extends Fragment {
 
@@ -17,7 +17,7 @@ public class SecondFragment extends Fragment {
 
   @Override
   public View onCreateView(
-    LayoutInflater inflater, ViewGroup container,
+    @NonNull LayoutInflater inflater, ViewGroup container,
     Bundle savedInstanceState
   ) {
 
