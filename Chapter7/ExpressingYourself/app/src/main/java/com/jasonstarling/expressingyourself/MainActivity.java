@@ -1,22 +1,20 @@
 package com.jasonstarling.expressingyourself;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.jasonstarling.expressingyourself.databinding.ActivityMainBinding;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
-
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
-import com.jasonstarling.expressingyourself.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +41,22 @@ public class MainActivity extends AppCompatActivity {
           .setAction("Action", null).show();
       }
     });
+    int numMessages;
+    numMessages = 10;
+    // Output the value of numMessages
+    Log.i("numMessages = ", "" + numMessages);
+    numMessages++;
+    numMessages = numMessages + 1;
+    Log.i("numMessages = ", "" + numMessages);
+    // Now a boolean (just true or false)
+    boolean isFriend = true;
+    Log.i("isFriend = ", "" + isFriend);
+    // A contact and an important message
+    String contact = "James Gosling";
+    String message = "Dear reader, I invented Java.";
+    // Now let's play with those String variables
+    Toast.makeText(this, "Message from " + contact, Toast.LENGTH_SHORT).show();
+    Toast.makeText(this, "Message is: " + message, Toast.LENGTH_SHORT).show();
   }
 
   @Override
