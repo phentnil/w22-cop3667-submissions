@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -19,13 +18,13 @@ import androidx.navigation.ui.NavigationUI;
 public class MainActivity extends AppCompatActivity {
 
   private AppBarConfiguration appBarConfiguration;
-  private ActivityMainBinding binding;
+  private boolean isFriend;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    binding = ActivityMainBinding.inflate(getLayoutInflater());
+    com.jasonstarling.expressingyourself.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
 
     setSupportActionBar(binding.toolbar);
@@ -34,13 +33,8 @@ public class MainActivity extends AppCompatActivity {
     appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
     NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-    binding.fab.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-          .setAction("Action", null).show();
-      }
-    });
+    binding.fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+      .setAction("Action", null).show());
     int numMessages;
     numMessages = 10;
     // Output the value of numMessages
@@ -49,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
     numMessages = numMessages + 1;
     Log.i("numMessages = ", "" + numMessages);
     // Now a boolean (just true or false)
-    boolean isFriend = true;
+    // Set it to true or false depending on the value of Math.random()
+    isFriend = Math.round(Math.random()) == 0;
     Log.i("isFriend = ", "" + isFriend);
     // A contact and an important message
     String contact = "James Gosling";
@@ -63,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
     getMenuInflater().inflate(R.menu.menu_main, menu);
+    isFriend = false;
     return true;
   }
 
