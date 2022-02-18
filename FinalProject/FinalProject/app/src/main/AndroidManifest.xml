@@ -10,8 +10,14 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.FinalProject">
     <activity
+      android:name=".ContentMainActivity"
+      android:exported="false" />
+    <activity android:name=".SymptomEntryAdd" />
+    <activity android:name=".FoodEntryAdd" />
+    <activity
       android:name=".MainActivity"
-      android:exported="true">
+      android:exported="true"
+      android:theme="@style/Theme.FinalProject">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
