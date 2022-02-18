@@ -1,12 +1,9 @@
 package com.jasonstarling.finalproject;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import com.jasonstarling.finalproject.databinding.FragmentFoodEntryAddBinding;
 
@@ -15,8 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 public class FoodEntryAdd extends Fragment {
-
-  EditText foodEntry;
   private FragmentFoodEntryAddBinding binding;
 
   @Override
@@ -32,9 +27,6 @@ public class FoodEntryAdd extends Fragment {
   }
 
   public void addFood(View v) {
-    /*Editable foodEdit = foodEntry.getText();
-    String foodValue = String.valueOf(foodEdit);
-    Log.d("foodEntry", foodValue);*/
     loadMain(v);
   }
 

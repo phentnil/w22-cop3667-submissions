@@ -12,8 +12,6 @@
     <activity
       android:name=".ContentMainActivity"
       android:exported="false" />
-    <activity android:name=".SymptomEntryAdd" />
-    <activity android:name=".FoodEntryAdd" />
     <activity
       android:name=".MainActivity"
       android:exported="true"
