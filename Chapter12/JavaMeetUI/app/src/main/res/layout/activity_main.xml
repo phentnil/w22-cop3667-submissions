@@ -6,13 +6,76 @@
   android:layout_height="match_parent"
   tools:context=".MainActivity">
 
-  <TextView
+  <Button
+    android:id="@+id/btnTake"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Hello World!"
+    android:layout_marginEnd="16dp"
+    android:text="Take"
+    app:layout_constraintBottom_toBottomOf="@+id/btnAdd"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/btnAdd" />
+
+  <Button
+    android:id="@+id/btnReset"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:layout_marginEnd="16dp"
+    android:text="Reset"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+  <Button
+    android:id="@+id/btnShrink"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="16dp"
+    android:text="Shrink"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.554" />
+
+  <Button
+    android:id="@+id/btnGrow"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="26dp"
+    android:text="Grow"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.554" />
+
+  <Button
+    android:id="@+id/btnHide"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:layout_marginStart="26dp"
+    android:text="Hide"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+  <Button
+    android:id="@+id/btnAdd"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="26dp"
+    android:layout_marginTop="136dp"
+    android:text="Add"
+    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
+  <TextView
+    android:id="@+id/txtValue"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    android:text="0"
+    android:textSize="40sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
