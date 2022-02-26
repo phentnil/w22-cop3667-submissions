@@ -84,8 +84,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
       case R.id.btnReset:
         value = 0;
         txtValue.setText("" + value);
-        break;
-      case R.id.txtValue:
+
+        // Added the ability to reset the textScaleX property to 1.0
+        txtValue.setTextScaleX(1.0F);
         break;
     }
   }
