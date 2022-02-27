@@ -4,20 +4,6 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
-  <EditText
-    android:id="@+id/txtAddSymptom"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
-    android:ems="10"
-    android:hint="@string/add_new_symptom_entry"
-    android:inputType="textPersonName"
-    android:minHeight="48dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    android:autofillHints="" />
-
   <Button
     android:id="@+id/btnAddSymptom"
     android:layout_width="wrap_content"
@@ -45,5 +31,19 @@
     app:layout_constraintHorizontal_bias="0.8"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="@+id/btnAddSymptom" />
+
+  <EditText
+    android:id="@+id/txtAddSymptom"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:autofillHints=""
+    android:ems="10"
+    android:hint="@string/add_new_symptom_entry"
+    android:inputType="textPersonName"
+    android:minHeight="48dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
 public class DialogShowFoodEntry extends DialogFragment {
-
   private Food mFood;
 
   @NonNull
