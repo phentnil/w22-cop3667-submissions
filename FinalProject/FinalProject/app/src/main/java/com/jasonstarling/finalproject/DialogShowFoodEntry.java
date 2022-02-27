@@ -25,12 +25,7 @@ public class DialogShowFoodEntry extends DialogFragment {
     txtTitle.setText(mFood.getFoodName());
     Button btnOK = dialogView.findViewById(R.id.btnOK);
     builder.setView(dialogView).setMessage("Your Food Entry");
-    btnOK.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        dismiss();
-      }
-    });
+    btnOK.setOnClickListener(view -> dismiss());
 
     return builder.create();
   }

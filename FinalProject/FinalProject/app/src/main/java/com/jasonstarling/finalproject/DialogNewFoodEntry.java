@@ -27,25 +27,17 @@ public class DialogNewFoodEntry extends DialogFragment {
 
     builder.setView(dialogView).setMessage("Add a new food");
 
-    btnCancel.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        dismiss();
-      }
-    });
+    btnCancel.setOnClickListener(v -> dismiss());
 
-    btnAdd.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        Food newFood = new Food();
-        newFood.setFoodName(editFood.getText().toString());
+    btnAdd.setOnClickListener(v -> {
+      Food newFood = new Food();
+      newFood.setFoodName(editFood.getText().toString());
 
-        MainActivity callingActivity = (MainActivity) getActivity();
-        assert callingActivity != null;
-        callingActivity.createNewFood(newFood);
+      MainActivity callingActivity = (MainActivity) getActivity();
+      assert callingActivity != null;
+      callingActivity.createNewFood(newFood);
 
-        dismiss();
-      }
+      dismiss();
     });
 
     return builder.create();

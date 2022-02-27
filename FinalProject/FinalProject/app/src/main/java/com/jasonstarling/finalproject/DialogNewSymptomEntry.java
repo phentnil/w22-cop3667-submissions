@@ -27,25 +27,17 @@ public class DialogNewSymptomEntry extends DialogFragment {
 
     builder.setView(dialogView).setMessage("Add a new symptom");
 
-    btnCancel.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        dismiss();
-      }
-    });
+    btnCancel.setOnClickListener(v -> dismiss());
 
-    btnAdd.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        Symptom newSymptom = new Symptom();
-        newSymptom.setSymptomName(editSymptom.getText().toString());
+    btnAdd.setOnClickListener(v -> {
+      Symptom newSymptom = new Symptom();
+      newSymptom.setSymptomName(editSymptom.getText().toString());
 
-        MainActivity callingActivity = (MainActivity) getActivity();
-        assert callingActivity != null;
-        callingActivity.createNewSymptom(newSymptom);
+      MainActivity callingActivity = (MainActivity) getActivity();
+      assert callingActivity != null;
+      callingActivity.createNewSymptom(newSymptom);
 
-        dismiss();
-      }
+      dismiss();
     });
 
     return builder.create();

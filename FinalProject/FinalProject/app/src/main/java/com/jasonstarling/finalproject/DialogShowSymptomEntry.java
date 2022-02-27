@@ -23,13 +23,8 @@ public class DialogShowSymptomEntry extends DialogFragment {
     TextView txtTitle = dialogView.findViewById(R.id.txtTitle);
     txtTitle.setText(mSymptom.getSymptomName());
     Button btnOK = dialogView.findViewById(R.id.btnOK);
-    builder.setView(dialogView).setMessage("Your symptom");
-    btnOK.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        dismiss();
-      }
-    });
+    builder.setView(dialogView).setMessage("Your symptom entry");
+    btnOK.setOnClickListener(view -> dismiss());
     return builder.create();
   }
 

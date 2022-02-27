@@ -20,35 +20,23 @@ public class MainActivity extends AppCompatActivity {
     Button btnViewFoodEntry = findViewById(R.id.btnViewFood);
     Button btnViewSymptomEntry = findViewById(R.id.btnViewSymptom);
 
-    btnAddFoodEntry.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        DialogNewFoodEntry dialog = new DialogNewFoodEntry();
-        dialog.show(getSupportFragmentManager(), "");
-      }
+    btnAddFoodEntry.setOnClickListener(view -> {
+      DialogNewFoodEntry dialog = new DialogNewFoodEntry();
+      dialog.show(getSupportFragmentManager(), "");
     });
-    btnAddSymptomEntry.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        DialogNewSymptomEntry dialog = new DialogNewSymptomEntry();
-        dialog.show(getSupportFragmentManager(), "");
-      }
+    btnAddSymptomEntry.setOnClickListener(view -> {
+      DialogNewSymptomEntry dialog = new DialogNewSymptomEntry();
+      dialog.show(getSupportFragmentManager(), "");
     });
-    btnViewFoodEntry.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        DialogShowFoodEntry dialog = new DialogShowFoodEntry();
-        dialog.sendFoodEntry(mTempFood);
-        dialog.show(getSupportFragmentManager(), "123");
-      }
+    btnViewFoodEntry.setOnClickListener(view -> {
+      DialogShowFoodEntry dialog = new DialogShowFoodEntry();
+      dialog.sendFoodEntry(mTempFood);
+      dialog.show(getSupportFragmentManager(), "123");
     });
-    btnViewSymptomEntry.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        DialogShowSymptomEntry dialog = new DialogShowSymptomEntry();
-        dialog.sendSymptomEntry(mTempSymptom);
-        dialog.show(getSupportFragmentManager(), "123");
-      }
+    btnViewSymptomEntry.setOnClickListener(view -> {
+      DialogShowSymptomEntry dialog = new DialogShowSymptomEntry();
+      dialog.sendSymptomEntry(mTempSymptom);
+      dialog.show(getSupportFragmentManager(), "123");
     });
   }
 
