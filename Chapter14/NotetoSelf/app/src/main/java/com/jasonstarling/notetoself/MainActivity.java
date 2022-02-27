@@ -7,25 +7,21 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.jasonstarling.notetoself.databinding.ActivityMainBinding;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.navigation.ui.AppBarConfiguration;
 
 public class MainActivity extends AppCompatActivity {
   // Temporary code
   Note mTempNote = new Note();
 
-  private AppBarConfiguration appBarConfiguration;
-  private ActivityMainBinding binding;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     Toolbar toolbar = findViewById(R.id.toolbar);
-    setSupportActionBar(binding.toolbar);
+    setSupportActionBar(toolbar);
 
     FloatingActionButton fab = findViewById(R.id.fab);
     fab.setOnClickListener(new View.OnClickListener() {

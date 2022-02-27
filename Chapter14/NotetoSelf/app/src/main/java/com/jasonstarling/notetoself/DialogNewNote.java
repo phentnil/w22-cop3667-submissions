@@ -16,7 +16,7 @@ public class DialogNewNote extends DialogFragment {
   public Dialog onCreateDialog(Bundle savedInstanceState) {
     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-    LayoutInflater inflater = getActivity().getLayoutInflater();
+    LayoutInflater inflater = requireActivity().getLayoutInflater();
 
     View dialogView = inflater.inflate(R.layout.dialog_new_note, null);
 
@@ -57,6 +57,7 @@ public class DialogNewNote extends DialogFragment {
         MainActivity callingActivity = (MainActivity) getActivity();
 
         // Pass newNote back to MainActivity
+        assert callingActivity != null;
         callingActivity.createNewNote(newNote);
 
         // Quit the dialog

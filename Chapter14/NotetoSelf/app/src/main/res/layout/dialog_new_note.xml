@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
@@ -9,7 +8,7 @@
     android:id="@+id/btnCancel"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="64dp"
+    android:layout_marginBottom="16dp"
     android:layout_marginStart="16dp"
     android:text="@string/cancel_button"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -19,7 +18,7 @@
     android:id="@+id/btnOK"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="64dp"
+    android:layout_marginBottom="16dp"
     android:layout_marginEnd="16dp"
     android:text="@string/ok_button"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -29,51 +28,63 @@
     android:id="@+id/checkBoxImportant"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="32dp"
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
     android:text="@string/important_text"
+    app:layout_constraintBottom_toTopOf="@+id/btnCancel"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/checkBoxTodo" />
+    app:layout_constraintTop_toBottomOf="@+id/checkBoxTodo"
+    app:layout_constraintVertical_bias="0.0" />
 
   <CheckBox
     android:id="@+id/checkBoxIdea"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="32dp"
     android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
     android:text="@string/idea_text"
     app:layout_constraintBottom_toTopOf="@+id/btnCancel"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/editDescription"
-    app:layout_constraintVertical_bias="0.3" />
+    app:layout_constraintVertical_bias="0.0" />
 
   <CheckBox
     android:id="@+id/checkBoxTodo"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="32dp"
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
     android:text="@string/todo_text"
+    app:layout_constraintBottom_toTopOf="@+id/btnCancel"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/checkBoxIdea" />
+    app:layout_constraintTop_toBottomOf="@+id/checkBoxIdea"
+    app:layout_constraintVertical_bias="0.0" />
 
   <EditText
     android:id="@+id/editDescription"
-    android:layout_width="wrap_content"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
+    android:layout_marginEnd="16dp"
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
     android:ems="10"
     android:hint="@string/description_hint"
     android:inputType="textMultiLine"
+    android:maxLength="231"
     android:minHeight="48dp"
     android:text="@string/description_hint"
+    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/editTitle" />
 
   <EditText
     android:id="@+id/editTitle"
-    android:layout_width="wrap_content"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
+    android:layout_marginEnd="16dp"
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
     android:ems="10"
@@ -81,6 +92,7 @@
     android:inputType="textPersonName"
     android:minHeight="48dp"
     android:text="@string/title_hint"
+    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

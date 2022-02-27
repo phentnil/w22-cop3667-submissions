@@ -9,7 +9,7 @@
     android:id="@+id/btnOK"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="64dp"
+    android:layout_marginBottom="32dp"
     android:text="@string/ok_button"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -21,8 +21,8 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="16dp"
     android:text="@string/todo_text"
-    app:layout_constraintEnd_toStartOf="@+id/textViewIdea"
-    app:layout_constraintStart_toEndOf="@+id/textViewImportant"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
   <TextView
@@ -30,18 +30,20 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginEnd="16dp"
+    android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
     android:text="@string/idea_text"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@+id/textViewTodo"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
   <TextView
     android:id="@+id/txtTitle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="32dp"
-    android:text="TextView"
+    android:layout_marginTop="16dp"
+    android:text="@string/textview"
     android:textSize="24sp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -49,23 +51,29 @@
 
   <TextView
     android:id="@+id/txtDescription"
-    android:layout_width="wrap_content"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:layout_marginEnd="16dp"
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
-    android:text="TextView"
+    android:text="@string/textview"
+    app:layout_constraintBottom_toTopOf="@+id/btnOK"
+    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+    app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+    app:layout_constraintVertical_bias="0.0" />
 
   <TextView
     android:id="@+id/textViewImportant"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginEnd="16dp"
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
     android:text="@string/important_text"
-    app:layout_constraintEnd_toStartOf="@+id/textViewTodo"
-    app:layout_constraintHorizontal_chainStyle="spread_inside"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,10 +16,10 @@ public class DialogShowNote extends DialogFragment {
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
     AlertDialog.Builder builder =
-      new AlertDialog.Builder(getActivity());
+      new AlertDialog.Builder(requireActivity());
 
     LayoutInflater inflater =
-      getActivity().getLayoutInflater();
+      requireActivity().getLayoutInflater();
 
     View dialogView =
       inflater.inflate(R.layout.dialog_show_note, null);
