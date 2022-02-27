@@ -4,6 +4,11 @@
   <string name="add_new_symptom_entry">Add new symptom entry</string>
   <string name="add">Add</string>
   <string name="cancel">Cancel</string>
-  <string name="add_a_food_entry">Add a food entry:</string>
-  <string name="add_a_symptom_entry">Add a symptom entry:</string>
+  <string name="new_symptom">Add Symptom</string>
+  <string name="new_food">Add Food</string>
+  <string name="view_food">View Food</string>
+  <string name="view_symptom">View Symptom</string>
+  <string name="view_entries">View Entries</string>
+  <string name="add_entries">Add Entries</string>
+  <string name="ok_button">OK</string>
 </resources>
