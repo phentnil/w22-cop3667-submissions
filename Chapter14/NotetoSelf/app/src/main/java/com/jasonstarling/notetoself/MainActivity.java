@@ -1,24 +1,21 @@
 package com.jasonstarling.notetoself;
 
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.jasonstarling.notetoself.databinding.ActivityMainBinding;
-
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.jasonstarling.notetoself.databinding.ActivityMainBinding;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.navigation.ui.AppBarConfiguration;
 
 public class MainActivity extends AppCompatActivity {
+  // Temporary code
+  Note mTempNote = new Note();
 
   private AppBarConfiguration appBarConfiguration;
   private ActivityMainBinding binding;
@@ -26,21 +23,32 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
-    binding = ActivityMainBinding.inflate(getLayoutInflater());
-    setContentView(binding.getRoot());
-
+    setContentView(R.layout.activity_main);
+    Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(binding.toolbar);
 
-    NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-    appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-    NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-    binding.fab.setOnClickListener(new View.OnClickListener() {
+    FloatingActionButton fab = findViewById(R.id.fab);
+    fab.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-          .setAction("Action", null).show();
+        DialogNewNote dialog = new DialogNewNote();
+        dialog.show(getSupportFragmentManager(), "");
+      }
+    });
+
+    // Temporary code
+    Button button = findViewById(R.id.button);
+    button.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        // Create a new DialogShowNote called dialog
+        DialogShowNote dialog = new DialogShowNote();
+
+        // Send the note via the sendNoteSelected method
+        dialog.sendNoteSelected(mTempNote);
+
+        // Create the dialog
+        dialog.show(getSupportFragmentManager(), "123");
       }
     });
   }
@@ -67,10 +75,8 @@ public class MainActivity extends AppCompatActivity {
     return super.onOptionsItemSelected(item);
   }
 
-  @Override
-  public boolean onSupportNavigateUp() {
-    NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-    return NavigationUI.navigateUp(navController, appBarConfiguration)
-      || super.onSupportNavigateUp();
+  public void createNewNote(Note n) {
+    // Temporary code
+    mTempNote = n;
   }
 }
