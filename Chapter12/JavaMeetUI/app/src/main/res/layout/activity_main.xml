@@ -11,7 +11,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginEnd="16dp"
-    android:text="Take"
+    android:text="@string/btnTakeLabel"
     app:layout_constraintBottom_toBottomOf="@+id/btnAdd"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="@+id/btnAdd" />
@@ -22,7 +22,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
     android:layout_marginEnd="16dp"
-    android:text="Reset"
+    android:text="@string/btnResetLabel"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent" />
 
@@ -31,7 +31,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginEnd="16dp"
-    android:text="Shrink"
+    android:text="@string/btnShrinkLabel"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
@@ -42,7 +42,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="26dp"
-    android:text="Grow"
+    android:text="@string/btnGrowLabel"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
@@ -54,7 +54,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"
     android:layout_marginStart="26dp"
-    android:text="Hide"
+    android:text="@string/btnHideLabel"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent" />
 
@@ -64,7 +64,7 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="26dp"
     android:layout_marginTop="136dp"
-    android:text="Add"
+    android:text="@string/btnAddLabel"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,7 +73,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="1dp"
-    android:text="0"
+    android:text="@string/textViewNumber"
     android:textSize="40sp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"

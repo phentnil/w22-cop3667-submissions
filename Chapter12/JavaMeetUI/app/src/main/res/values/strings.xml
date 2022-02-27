@@ -1,3 +1,12 @@
 <resources>
   <string name="app_name">Java Meet UI</string>
+  <string name="btnHide_show">SHOW</string>
+  <string name="btnHide_hide">HIDE</string>
+  <string name="btnTakeLabel">Take</string>
+  <string name="btnResetLabel">Reset</string>
+  <string name="btnShrinkLabel">Shrink</string>
+  <string name="btnGrowLabel">Grow</string>
+  <string name="btnHideLabel">Hide</string>
+  <string name="btnAddLabel">Add</string>
+  <string name="textViewNumber">0</string>
 </resources>
