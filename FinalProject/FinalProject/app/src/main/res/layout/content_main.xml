@@ -37,19 +37,25 @@
 
       <Button
         android:id="@+id/btnViewFood"
+        style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:text="@string/view_food" />
+        android:backgroundTint="@color/teal_200"
+        android:text="@string/view_food"
+        android:textColor="#5E35B1" />
 
       <Button
         android:id="@+id/btnViewSymptom"
+        style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:text="@string/view_symptom" />
+        android:backgroundTint="@color/teal_200"
+        android:text="@string/view_symptom"
+        android:textColor="#5E35B1" />
     </LinearLayout>
 
   </LinearLayout>
@@ -86,19 +92,25 @@
 
       <Button
         android:id="@+id/btnAddFood"
+        style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:text="@string/new_food" />
+        android:backgroundTint="@color/teal_200"
+        android:text="@string/new_food"
+        android:textColor="#5E35B1" />
 
       <Button
         android:id="@+id/btnAddSymptom"
+        style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:text="@string/new_symptom" />
+        android:backgroundTint="@color/teal_200"
+        android:text="@string/new_symptom"
+        android:textColor="#5E35B1" />
     </LinearLayout>
 
   </LinearLayout>
