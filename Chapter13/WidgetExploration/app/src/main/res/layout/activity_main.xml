@@ -6,13 +6,134 @@
   android:layout_height="match_parent"
   tools:context=".MainActivity">
 
-  <TextView
+  <Button
+    android:id="@+id/Button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Hello World!"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
+    android:layout_marginTop="32dp"
+    android:text="@string/capture"
+    app:layout_constraintStart_toStartOf="@+id/editText"
+    app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+  <CheckBox
+    android:id="@+id/checkBoxTint"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="32dp"
+    android:text="@string/tint"
+    app:layout_constraintStart_toStartOf="@+id/checkBoxTransparency"
+    app:layout_constraintTop_toBottomOf="@+id/checkBoxTransparency" />
+
+  <CheckBox
+    android:id="@+id/checkBoxReSize"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="32dp"
+    android:text="@string/re_size"
+    app:layout_constraintStart_toStartOf="@+id/checkBoxTint"
+    app:layout_constraintTop_toBottomOf="@+id/checkBoxTint" />
+
+  <CheckBox
+    android:id="@+id/checkBoxTransparency"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="32dp"
+    android:text="@string/transparency"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
+
+  <EditText
+    android:id="@+id/editText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="32dp"
+    android:ems="10"
+    android:inputType="textPersonName"
+    android:minHeight="48dp"
+    android:text="@string/name"
+    app:layout_constraintStart_toStartOf="@+id/radioGroup"
+    app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+  <ImageView
+    android:id="@+id/imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="32dp"
+    android:contentDescription="@string/checkbox_image"
+    app:layout_constraintStart_toStartOf="@+id/checkBoxReSize"
+    app:layout_constraintTop_toBottomOf="@+id/checkBoxReSize"
+    app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+  <RadioGroup
+    android:id="@+id/radioGroup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="32dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <RadioButton
+      android:id="@+id/radioButtonLondon"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:checked="true"
+      android:text="London" />
+
+    <RadioButton
+      android:id="@+id/radioButtonBeijing"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Beijing" />
+
+    <RadioButton
+      android:id="@+id/radioButtonNewYork"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="New York" />
+  </RadioGroup>
+
+  <Switch
+    android:id="@+id/switch1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="32dp"
+    android:layout_marginTop="32dp"
+    android:clickable="true"
+    android:enabled="true"
+    android:minHeight="48dp"
+    android:text="Switch"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <TextClock
+    android:id="@+id/textClock"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="32dp"
+    android:format12Hour="hh:mm:ss a"
+    app:layout_constraintStart_toStartOf="@+id/Button"
+    app:layout_constraintTop_toBottomOf="@+id/Button" />
+
+  <TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="32dp"
+    android:layout_marginTop="32dp"
+    android:text="TextView"
+    android:textSize="24sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="@+id/switch1"
+    app:layout_constraintTop_toBottomOf="@+id/switch1" />
+
+  <WebView
+    android:id="@+id/webView"
+    android:layout_width="0dp"
+    android:layout_height="400dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,9 @@
 <resources>
   <string name="app_name">Widget Exploration</string>
+  <string name="capture">Capture</string>
+  <string name="transparency">Transparency</string>
+  <string name="tint">Tint</string>
+  <string name="re_size">Re-Size</string>
+  <string name="name">Name</string>
+  <string name="checkbox_image">Image for checkboxes</string>
 </resources>
