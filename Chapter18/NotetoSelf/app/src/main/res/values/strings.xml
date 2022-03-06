@@ -1,0 +1,16 @@
+<resources>
+  <string name="app_name">Note to Self</string>
+  <string name="action_settings">Settings</string>
+  <!-- Strings used for fragments for navigation -->
+
+  <string name="cancel_button">Cancel</string>
+  <string name="ok_button">OK</string>
+  <string name="important_text">Important</string>
+  <string name="idea_text">Idea</string>
+  <string name="todo_text">Todo</string>
+  <string name="description_hint">Description</string>
+  <string name="title_hint">Title</string>
+  <string name="textview">TextView</string>
+  <string name="create_note">Create Note</string>
+  <string name="text_switch">Switch</string>
+</resources>
