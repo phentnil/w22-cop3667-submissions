@@ -1,7 +1,10 @@
 package com.jasonstarling.notetoself;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -18,8 +21,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
-  private final List<Note> noteList = new ArrayList<>();
+  private List<Note> noteList;
   private NoteAdapter mAdapter;
+  private RecyclerView recyclerView;
+  private JSONSerializer mSerializer;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +39,19 @@ public class MainActivity extends AppCompatActivity {
       dialog.show(getSupportFragmentManager(), "");
     });
 
-    RecyclerView recyclerView = findViewById(R.id.recyclerView);
+    mSerializer = new JSONSerializer("NoteToSelf.json", getApplicationContext());
+    try {
+      noteList = mSerializer.load();
+    } catch (Exception e) {
+      noteList = new ArrayList<>();
+      Log.e("Error loading notes", "", e);
+    }
+
+    recyclerView = findViewById(R.id.recyclerView);
     mAdapter = new NoteAdapter(this, noteList);
     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
     recyclerView.setLayoutManager(mLayoutManager);
     recyclerView.setItemAnimator(new DefaultItemAnimator());
-
-    // Add a neat dividing line between items in the list
-    recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
     // Set the adapter
     recyclerView.setAdapter(mAdapter);
@@ -61,8 +71,9 @@ public class MainActivity extends AppCompatActivity {
      * as you specify a parent activity in AndroidManifest.xml. */
     int id = item.getItemId();
 
-    // noinspection SimplifiableIfStatement
     if (id == R.id.action_settings) {
+      Intent intent = new Intent(this, SettingsActivity.class);
+      startActivity(intent);
       return true;
     }
 
@@ -79,5 +90,34 @@ public class MainActivity extends AppCompatActivity {
     DialogShowNote dialog = new DialogShowNote();
     dialog.sendNoteSelected(noteList.get(noteToShow));
     dialog.show(getSupportFragmentManager(), "");
+  }
+
+  @Override
+  protected void onResume() {
+    super.onResume();
+    SharedPreferences mPrefs = getSharedPreferences("Note to self", MODE_PRIVATE);
+    boolean mShowDividers = mPrefs.getBoolean("dividers", true);
+    if (mShowDividers) {
+      // Add a neat dividing line between list items
+      recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+    } else {
+      /* Check for dividers
+       * or the app will crash */
+      if (recyclerView.getItemDecorationCount() > 0) recyclerView.removeItemDecorationAt(0);
+    }
+  }
+
+  public void saveNotes() {
+    try {
+      mSerializer.save(noteList);
+    } catch (Exception e) {
+      Log.e("Error Saving Notes", "", e);
+    }
+  }
+
+  @Override
+  protected void onPause() {
+    super.onPause();
+    saveNotes();
   }
 }
