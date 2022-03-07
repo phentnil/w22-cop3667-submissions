@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 public class SearchFragment extends Fragment {
+  @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     View v = inflater.inflate(R.layout.content_search, container, false);
-    // Database and UI code goes here
     return v;
   }
 }

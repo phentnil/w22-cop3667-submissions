@@ -1,7 +1,6 @@
 package com.jasonstarling.agedatabase;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -16,7 +15,9 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity
+  implements NavigationView.OnNavigationItemSelectedListener {
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -29,8 +30,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
       .setAction("Action", null).show());
 
     DrawerLayout drawer = findViewById(R.id.drawer_layout);
-    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-
+    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+      this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawer.addDrawerListener(toggle);
     toggle.syncState();
 
@@ -70,9 +71,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     return super.onOptionsItemSelected(item);
   }
 
+
   @Override
   public boolean onNavigationItemSelected(MenuItem item) {
-    Log.i("navigationItemSelected","is running");
     // Handle navigation view item clicks here.
 
     // Create a transaction
@@ -85,15 +86,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
       InsertFragment fragment = new InsertFragment();
       // What to do and where to do it
       transaction.replace(R.id.fragmentHolder, fragment);
+
     } else if (id == R.id.nav_search) {
       SearchFragment fragment = new SearchFragment();
       transaction.replace(R.id.fragmentHolder, fragment);
+
     } else if (id == R.id.nav_delete) {
       DeleteFragment fragment = new DeleteFragment();
       transaction.replace(R.id.fragmentHolder, fragment);
+
     } else if (id == R.id.nav_results) {
       ResultsFragment fragment = new ResultsFragment();
       transaction.replace(R.id.fragmentHolder, fragment);
+
     }
 
     // Ask Android to remember which
