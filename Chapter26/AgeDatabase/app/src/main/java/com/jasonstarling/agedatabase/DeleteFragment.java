@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 public class DeleteFragment extends Fragment {
-
-  @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     View v = inflater.inflate(R.layout.content_delete, container, false);
     // Database and UI code goes here

@@ -7,31 +7,19 @@
     <item
       android:id="@+id/nav_insert"
       android:icon="@drawable/ic_menu_camera"
-      android:title="Insert" />
+      android:title="@string/insert" />
     <item
       android:id="@+id/nav_delete"
       android:icon="@drawable/ic_menu_gallery"
-      android:title="Delete" />
+      android:title="@string/delete" />
     <item
       android:id="@+id/nav_search"
       android:icon="@drawable/ic_menu_slideshow"
-      android:title="Search" />
+      android:title="@string/search" />
     <item
       android:id="@+id/nav_results"
       android:icon="@drawable/ic_menu_camera"
-      android:title="Results" />
-    <!--<item
-    android:id="@+id/nav_home"
-    android:icon="@drawable/ic_menu_camera"
-    android:title="@string/menu_home" />
-    <item
-      android:id="@+id/nav_gallery"
-      android:icon="@drawable/ic_menu_gallery"
-      android:title="@string/menu_gallery" />
-    <item
-      android:id="@+id/nav_slideshow"
-      android:icon="@drawable/ic_menu_slideshow"
-      android:title="@string/menu_slideshow" />-->
+      android:title="@string/results" />
   </group>
 
 </menu>
