@@ -9,11 +9,10 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
 public class ImagePagerAdapter extends PagerAdapter {
-  Context context;
-  int[] images;
+  final Context context;
+  final int[] images;
   LayoutInflater inflater;
 
   public ImagePagerAdapter(Context context, int[] images) {
@@ -33,7 +32,7 @@ public class ImagePagerAdapter extends PagerAdapter {
 
   @NonNull
   @Override
-  public Object instantiateItem(ViewGroup container, int position) {
+  public Object instantiateItem(@NonNull ViewGroup container, int position) {
     ImageView image;
     inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     View itemView = inflater.inflate(R.layout.pager_item, container, false);
@@ -45,12 +44,12 @@ public class ImagePagerAdapter extends PagerAdapter {
     image.setImageResource(images[position]);
 
     // Add pager_item layout as the current page to the viewPager
-    ((ViewPager) container).addView(itemView);
+    container.addView(itemView);
     return itemView;
   }
 
   @Override
-  public void destroyItem(ViewGroup container, int position, Object object) {
+  public void destroyItem(ViewGroup container, int position, @NonNull Object object) {
     // Remove pager_item from ViewPager
     container.removeView((RelativeLayout) object);
   }

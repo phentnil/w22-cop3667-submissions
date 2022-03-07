@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">Image Pager</string>
+  <string name="image_pager_view">Image Pager View</string>
 </resources>
