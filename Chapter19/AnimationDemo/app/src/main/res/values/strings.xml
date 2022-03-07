@@ -1,3 +1,19 @@
 <resources>
   <string name="app_name">Animation Demo</string>
+  <string name="right_left">Right Left</string>
+  <string name="fade_in_out">Fade In Out</string>
+  <string name="rotate_right">Rotate Right</string>
+  <string name="flash">Flash</string>
+  <string name="zoom_out">Zoom Out</string>
+  <string name="top_bot">Top Bot</string>
+  <string name="fade_out">Fade Out</string>
+  <string name="fade_in">Fade In</string>
+  <string name="zoom_in">Zoom In</string>
+  <string name="left_right">Left Right</string>
+  <string name="bounce">Bounce</string>
+  <string name="rotate_left">Rotate Left</string>
+  <string name="textview">TextView</string>
+  <string name="android_icon">Android Icon</string>
+  <string name="text_status_stopped">STOPPED</string>
+  <string name="text_status_running">RUNNING</string>
 </resources>
