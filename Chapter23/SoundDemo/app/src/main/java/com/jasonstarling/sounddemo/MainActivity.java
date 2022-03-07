@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
       @Override
       public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
         String temp = String.valueOf(spinner.getSelectedItem());
-        repeats = Integer.valueOf(temp);
+        repeats = Integer.parseInt(temp);
       }
 
       @Override
