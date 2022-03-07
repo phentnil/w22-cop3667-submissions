@@ -10,11 +10,11 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.LiveDrawing">
     <activity
-      android:name=".MainActivity"
-      android:exported="true">
+      android:name=".LiveDrawingActivity"
+      android:exported="true"
+      android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
