@@ -3,23 +3,25 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/mobile_navigation"
-  app:startDestination="@+id/nav_home">
-
+  app:startDestination="@+id/nav_insert">
   <fragment
-    android:id="@+id/nav_home"
-    android:name="com.jasonstarling.agedatabase.ui.home.HomeFragment"
-    android:label="@string/menu_home"
-    tools:layout="@layout/fragment_home" />
-
+    android:id="@+id/nav_insert"
+    android:name="com.jasonstarling.agedatabase.InsertFragment"
+    android:label="@string/insert"
+    tools:layout="@layout/content_insert" />
   <fragment
-    android:id="@+id/nav_gallery"
-    android:name="com.jasonstarling.agedatabase.ui.gallery.GalleryFragment"
-    android:label="@string/menu_gallery"
-    tools:layout="@layout/fragment_gallery" />
-
+    android:id="@+id/nav_delete"
+    android:name="com.jasonstarling.agedatabase.DeleteFragment"
+    android:label="@string/delete"
+    tools:layout="@layout/content_delete" />
   <fragment
-    android:id="@+id/nav_slideshow"
-    android:name="com.jasonstarling.agedatabase.ui.slideshow.SlideshowFragment"
-    android:label="@string/menu_slideshow"
-    tools:layout="@layout/fragment_slideshow" />
+    android:id="@+id/nav_search"
+    android:name="com.jasonstarling.agedatabase.SearchFragment"
+    android:label="@string/search"
+    tools:layout="@layout/content_search" />
+  <fragment
+    android:id="@+id/nav_results"
+    android:name="com.jasonstarling.agedatabase.ResultsFragment"
+    android:label="@string/results"
+    tools:layout="@layout/content_results" />
 </navigation>
