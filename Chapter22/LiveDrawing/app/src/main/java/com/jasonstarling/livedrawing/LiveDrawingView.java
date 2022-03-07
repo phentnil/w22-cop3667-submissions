@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -17,32 +18,27 @@ public class LiveDrawingView extends SurfaceView implements Runnable {
 
   // Objects needed for drawing
   private final SurfaceHolder mOurHolder;
-  private Canvas mCanvas;
   private final Paint mPaint;
-
-  // Save the frames per second
-  private long mFPS;
-
   // Screen resolution width
   private final int mScreenX;
-
   // Screen resolution height
   private final int mScreenY;
-
   // Use for the font size
   private final int mFontSize;
-
   // Use for the font margin
   private final int mFontMargin;
-
-  // Set up the Thread
-  private Thread mThread = null;
-
-  // Set up a drawing flag
-  private volatile boolean mDrawing;
-
   // Set up a paused flag
   private final boolean mPaused = true;
+  private Canvas mCanvas;
+  // Save the frames per second
+  private long mFPS;
+  // Set up the Thread
+  private Thread mThread = null;
+  // Set up a drawing flag
+  private volatile boolean mDrawing;
+  // Use these to make simple buttons
+  private RectF mResetButton;
+  private RectF mTogglePauseButton;
 
   // The constructor is called when LiveDrawingActivity calls new LiveDrawingView
   public LiveDrawingView(Context context, int x, int y) {
@@ -62,6 +58,10 @@ public class LiveDrawingView extends SurfaceView implements Runnable {
 
     // Initialize the Paint
     mPaint = new Paint();
+
+    // Initialize the two buttons
+    mResetButton = new RectF(0, 0, 100, 100);
+    mTogglePauseButton = new RectF(0, 150, 100, 250);
 
     // Initialize the particles and their systems
   }
@@ -121,6 +121,10 @@ public class LiveDrawingView extends SurfaceView implements Runnable {
 
       // Choose the font size
       mPaint.setTextSize(mFontSize);
+
+      // Draw the buttons
+      mCanvas.drawRect(mResetButton, mPaint);
+      mCanvas.drawRect(mTogglePauseButton, mPaint);
 
       if (DEBUGGING) {
         // Draw the HUD
