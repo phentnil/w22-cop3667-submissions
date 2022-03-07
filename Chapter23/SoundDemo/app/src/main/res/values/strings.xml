@@ -1,3 +1,14 @@
 <resources>
   <string name="app_name">Sound Demo</string>
+  <string name="fx2">FX2</string>
+  <string name="fx1">FX1</string>
+  <string name="fx3">FX3</string>
+  <string name="stop">STOP</string>
+  <string-array name="spinner_options">
+    <item>0</item>
+    <item>1</item>
+    <item>3</item>
+    <item>5</item>
+    <item>10</item>
+  </string-array>
 </resources>
