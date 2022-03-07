@@ -1,6 +1,7 @@
 package com.jasonstarling.agedatabase;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
   @Override
   public boolean onNavigationItemSelected(MenuItem item) {
+    Log.i("navigationItemSelected","is running");
     // Handle navigation view item clicks here.
 
     // Create a transaction
