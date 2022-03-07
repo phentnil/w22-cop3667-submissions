@@ -9,8 +9,6 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import java.util.Locale;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, Animation.AnimationListener {
@@ -71,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   private void loadUI() {
     imageView = (ImageView) findViewById(R.id.imageView);
     textStatus = (TextView) findViewById(R.id.textStatus);
+    textStatus.setText(getString(R.string.text_status_stopped));
 
     btnFadeIn = (Button) findViewById(R.id.btnFadeIn);
     btnFadeOut = (Button) findViewById(R.id.btnFadeOut);
@@ -100,12 +99,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     seekBarSpeed = (SeekBar) findViewById(R.id.seekBarSpeed);
     textSeekerSpeed = (TextView) findViewById(R.id.textSeekerSpeed);
+    textSeekerSpeed.setText(String.valueOf(seekBarSpeed.getProgress()));
     seekBarSpeed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
       @Override
       public void onProgressChanged(SeekBar seekBar, int value, boolean fromUser) {
         seekSpeedProgress = value;
-        textSeekerSpeed.setText(String.format(String.valueOf(Locale.US), seekSpeedProgress, seekBarSpeed.getMax()));
+        textSeekerSpeed.setText(String.format(String.valueOf(seekSpeedProgress), seekBarSpeed.getMax()));
       }
 
       @Override
@@ -134,74 +134,83 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
   @Override
   public void onClick(View v) {
-    switch (v.getId()) {
-      case R.id.btnFadeIn:
-        animFadeIn.setDuration(seekSpeedProgress);
-        animFadeIn.setAnimationListener(this);
-        imageView.startAnimation(animFadeIn);
-        break;
-      case R.id.btnFadeOut:
-        animFadeOut.setDuration(seekSpeedProgress);
-        animFadeOut.setAnimationListener(this);
-        imageView.startAnimation(animFadeOut);
-        break;
-      case R.id.btnFadeInOut:
-        animFadeInOut.setDuration(seekSpeedProgress);
-        animFadeInOut.setAnimationListener(this);
-        imageView.startAnimation(animFadeInOut);
-        break;
-      case R.id.btnZoomIn:
-        animZoomIn.setDuration(seekSpeedProgress);
-        animZoomIn.setAnimationListener(this);
-        imageView.startAnimation(animZoomIn);
-        break;
-      case R.id.btnZoomOut:
-        animZoomOut.setDuration(seekSpeedProgress);
-        animZoomOut.setAnimationListener(this);
-        imageView.startAnimation(animZoomOut);
-        break;
-      case R.id.btnLeftRight:
-        animLeftRight.setDuration(seekSpeedProgress);
-        animLeftRight.setAnimationListener(this);
-        imageView.startAnimation(animLeftRight);
-        break;
-      case R.id.btnRightLeft:
-        animRightLeft.setDuration(seekSpeedProgress);
-        animRightLeft.setAnimationListener(this);
-        imageView.startAnimation(animRightLeft);
-        break;
-      case R.id.btnTopBottom:
-        animTopBottom.setDuration(seekSpeedProgress);
-        animTopBottom.setAnimationListener(this);
-        imageView.startAnimation(animTopBottom);
-        break;
-      case R.id.btnBounce:
-		/*
+    int id = v.getId();
+    if (id == R.id.btnFadeIn) {
+      animFadeIn.setDuration(seekSpeedProgress);
+      animFadeIn.setAnimationListener(this);
+      imageView.startAnimation(animFadeIn);
+      return;
+    }
+    if (id == R.id.btnFadeOut) {
+      animFadeOut.setDuration(seekSpeedProgress);
+      animFadeOut.setAnimationListener(this);
+      imageView.startAnimation(animFadeOut);
+      return;
+    }
+    if (id == R.id.btnFadeInOut) {
+      animFadeInOut.setDuration(seekSpeedProgress);
+      animFadeInOut.setAnimationListener(this);
+      imageView.startAnimation(animFadeInOut);
+      return;
+    }
+    if (id == R.id.btnZoomIn) {
+      animZoomIn.setDuration(seekSpeedProgress);
+      animZoomIn.setAnimationListener(this);
+      imageView.startAnimation(animZoomIn);
+      return;
+    }
+    if (id == R.id.btnZoomOut) {
+      animZoomOut.setDuration(seekSpeedProgress);
+      animZoomOut.setAnimationListener(this);
+      imageView.startAnimation(animZoomOut);
+      return;
+    }
+    if (id == R.id.btnLeftRight) {
+      animLeftRight.setDuration(seekSpeedProgress);
+      animLeftRight.setAnimationListener(this);
+      imageView.startAnimation(animLeftRight);
+      return;
+    }
+    if (id == R.id.btnRightLeft) {
+      animRightLeft.setDuration(seekSpeedProgress);
+      animRightLeft.setAnimationListener(this);
+      imageView.startAnimation(animRightLeft);
+      return;
+    }
+    if (id == R.id.btnTopBottom) {
+      animTopBottom.setDuration(seekSpeedProgress);
+      animTopBottom.setAnimationListener(this);
+      imageView.startAnimation(animTopBottom);
+      return;
+    }
+    if (id == R.id.btnBounce) {/*
 		   Divide seekSpeedProgress by 10 because with
 		   the seekbar having a max value of 5000 it
 		   will make the animations range between
 		   almost instant and half a second
 		   5000 /  10 = 500 milliseconds
 		*/
-        animBounce.setDuration(seekSpeedProgress / 10);
-        animBounce.setAnimationListener(this);
-        imageView.startAnimation(animBounce);
-        break;
-      case R.id.btnFlash:
-        animFlash.setDuration(seekSpeedProgress / 10);
-        animFlash.setAnimationListener(this);
-        imageView.startAnimation(animFlash);
-        break;
-      case R.id.btnRotateLeft:
-        animRotateLeft.setDuration(seekSpeedProgress);
-        animRotateLeft.setAnimationListener(this);
-        imageView.startAnimation(animRotateLeft);
-        break;
-      case R.id.btnRotateRight:
-        animRotateRight.setDuration(seekSpeedProgress);
-        animRotateRight.setAnimationListener(this);
-        imageView.startAnimation(animRotateRight);
-        break;
+      animBounce.setDuration(seekSpeedProgress / 10);
+      animBounce.setAnimationListener(this);
+      imageView.startAnimation(animBounce);
+      return;
+    }
+    if (id == R.id.btnFlash) {
+      animFlash.setDuration(seekSpeedProgress / 10);
+      animFlash.setAnimationListener(this);
+      imageView.startAnimation(animFlash);
+      return;
+    }
+    if (id == R.id.btnRotateLeft) {
+      animRotateLeft.setDuration(seekSpeedProgress);
+      animRotateLeft.setAnimationListener(this);
+      imageView.startAnimation(animRotateLeft);
+      return;
+    }
+    if (id == R.id.btnRotateRight) {
+      animRotateRight.setDuration(seekSpeedProgress);
+      animRotateRight.setAnimationListener(this);
+      imageView.startAnimation(animRotateRight);
     }
   }
 }
