@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">Device Detection</string>
+  <string name="textview">TextView</string>
+  <string name="get_orientation_resolution">Get Orientation/Resolution</string>
 </resources>
