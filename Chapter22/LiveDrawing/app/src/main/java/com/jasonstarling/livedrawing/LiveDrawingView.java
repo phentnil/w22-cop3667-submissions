@@ -4,10 +4,14 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PointF;
 import android.graphics.RectF;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
+import java.util.ArrayList;
 
 public class LiveDrawingView extends SurfaceView implements Runnable {
   // Set whether we are debugging
@@ -27,8 +31,10 @@ public class LiveDrawingView extends SurfaceView implements Runnable {
   private final int mFontSize;
   // Use for the font margin
   private final int mFontMargin;
+  // Set up maximum ParticleSystems
+  private final int MAX_SYSTEMS = 1000;
   // Set up a paused flag
-  private final boolean mPaused = true;
+  private boolean mPaused = true;
   private Canvas mCanvas;
   // Save the frames per second
   private long mFPS;
@@ -39,6 +45,10 @@ public class LiveDrawingView extends SurfaceView implements Runnable {
   // Use these to make simple buttons
   private RectF mResetButton;
   private RectF mTogglePauseButton;
+  // Set up ArrayList to hold ParticleSystems
+  private ArrayList<ParticleSystem> mParticleSystems = new ArrayList<>();
+  private int mNextSystem = 0;
+  private int mParticlesPerSystem = 100;
 
   // The constructor is called when LiveDrawingActivity calls new LiveDrawingView
   public LiveDrawingView(Context context, int x, int y) {
@@ -64,6 +74,10 @@ public class LiveDrawingView extends SurfaceView implements Runnable {
     mTogglePauseButton = new RectF(0, 150, 100, 250);
 
     // Initialize the particles and their systems
+    for (int i = 0; i < MAX_SYSTEMS; i++) {
+      mParticleSystems.add(new ParticleSystem());
+      mParticleSystems.get(i).init(mParticlesPerSystem);
+    }
   }
 
   /* Starting this thread with
@@ -105,6 +119,11 @@ public class LiveDrawingView extends SurfaceView implements Runnable {
 
   private void update() {
     // Update the particles
+    for (int i = 0; i < mParticleSystems.size(); i++) {
+      if (mParticleSystems.get(i).mIsRunning) {
+        mParticleSystems.get(i).update(mFPS);
+      }
+    }
   }
 
   // Draw the particle systems and the HUD
@@ -121,6 +140,11 @@ public class LiveDrawingView extends SurfaceView implements Runnable {
 
       // Choose the font size
       mPaint.setTextSize(mFontSize);
+
+      // Draw the particle systems
+      for (int i = 0; i < mNextSystem; i++) {
+        mParticleSystems.get(i).draw(mCanvas, mPaint);
+      }
 
       // Draw the buttons
       mCanvas.drawRect(mResetButton, mPaint);
@@ -141,6 +165,9 @@ public class LiveDrawingView extends SurfaceView implements Runnable {
     int debugStart = 150;
     mPaint.setTextSize(debugSize);
     mCanvas.drawText("FPS: " + mFPS, 10, debugStart + debugSize, mPaint);
+
+    mCanvas.drawText("Systems: " + mNextSystem, 10, mFontMargin + debugStart + debugSize * 2, mPaint);
+    mCanvas.drawText("Particles: " + mNextSystem * mParticlesPerSystem, 10, mFontMargin + debugStart + debugSize * 3, mPaint);
   }
 
   // Called when the user quits the app
@@ -165,5 +192,32 @@ public class LiveDrawingView extends SurfaceView implements Runnable {
 
     // Start the thread
     mThread.start();
+  }
+
+  @Override
+  public boolean onTouchEvent(MotionEvent motionEvent) {
+    // User moved a finger while touching the screen
+    if ((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_MOVE) {
+      mParticleSystems.get(mNextSystem).emitParticles(new PointF(motionEvent.getX(), motionEvent.getY()));
+      mNextSystem++;
+      if (mNextSystem == MAX_SYSTEMS) {
+        mNextSystem = 0;
+      }
+    }
+
+    // Did the user touch the screen?
+    if ((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_DOWN) {
+      // User pressed the screen; was it on Reset button?
+      if (mResetButton.contains(motionEvent.getX(), motionEvent.getY())) {
+        // Clear the screen of all particles
+        mNextSystem = 0;
+      }
+
+      // User pressed the screen; was it on Pause button?
+      if (mTogglePauseButton.contains(motionEvent.getX(), motionEvent.getY())) {
+        mPaused = !mPaused;
+      }
+    }
+    return true;
   }
 }
