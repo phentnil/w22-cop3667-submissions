@@ -27,12 +27,11 @@ public class DataManager {
   private static final int DB_VERSION = 1;
   private static final String TABLE_N_AND_A = "name_and_age";
   // This is the actual database
-  private SQLiteDatabase db;
+  private final SQLiteDatabase db;
 
   public DataManager(Context context) {
     // Create an instance of our internal CustomSQLiteOpenHelper
-    CustomSQLiteOpenHelper helper = new
-      CustomSQLiteOpenHelper(context);
+    CustomSQLiteOpenHelper helper = new CustomSQLiteOpenHelper(context);
     // Get a writable database
     db = helper.getWritableDatabase();
   }
@@ -66,9 +65,8 @@ public class DataManager {
 
   // Get all the records
   public Cursor selectAll() {
-    Cursor c = db.rawQuery("SELECT *" + " from " +
+    return db.rawQuery("SELECT *" + " from " +
       TABLE_N_AND_A, null);
-    return c;
   }
 
   // Find a specific record
@@ -81,12 +79,11 @@ public class DataManager {
       TABLE_N_AND_A + " WHERE " +
       TABLE_ROW_NAME + " = '" + name + "';";
     Log.i("searchName() = ", query);
-    Cursor c = db.rawQuery(query, null);
-    return c;
+    return db.rawQuery(query, null);
   }
 
   // This class is created when our DataManager is initialized
-  private class CustomSQLiteOpenHelper extends SQLiteOpenHelper {
+  private static class CustomSQLiteOpenHelper extends SQLiteOpenHelper {
     public CustomSQLiteOpenHelper(Context context) {
       super(context, DB_NAME, null, DB_VERSION);
     }

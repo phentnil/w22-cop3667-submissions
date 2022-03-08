@@ -27,7 +27,7 @@ public class SearchFragment extends Fragment {
       // Make sure a result was found before using the Cursor
       if (c.getCount() > 0) {
         c.moveToNext();
-        textResult.setText("Result = " + c.getString(1) + " - " + c.getString(2));
+        textResult.setText(String.format("Result = %s - %s", c.getString(1), c.getString(2)));
       }
     });
     return v;

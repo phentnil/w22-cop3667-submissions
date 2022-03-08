@@ -23,17 +23,17 @@ public class ResultsFragment extends Fragment {
     Cursor c = dm.selectAll();
 
     // A String to hold all the text
-    String list = "";
+    StringBuilder list = new StringBuilder();
 
     // Loop through the results in the Cursor
     while (c.moveToNext()) {
       // Add the results to the String
       // with a little formatting
-      list += (c.getString(1) + " - " + c.getString(2) + "\n");
+      list.append(c.getString(1)).append(" - ").append(c.getString(2)).append("\n");
     }
 
     // Display the String in the TextView
-    textResults.setText(list);
+    textResults.setText(list.toString());
     return v;
   }
 }
