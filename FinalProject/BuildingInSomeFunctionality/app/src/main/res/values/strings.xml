@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">Building In Some Functionality</string>
+  <string name="app_name">Food and Symptom Tracker</string>
   <string name="navigation_drawer_open">Open navigation drawer</string>
   <string name="navigation_drawer_close">Close navigation drawer</string>
   <string name="nav_header_title">Android Studio</string>
@@ -7,7 +7,16 @@
   <string name="nav_header_desc">Navigation header</string>
   <string name="action_settings">Settings</string>
 
-  <string name="menu_home">Home</string>
-  <string name="menu_gallery">Gallery</string>
-  <string name="menu_slideshow">Slideshow</string>
+  <string name="insert">Insert</string>
+  <string name="food">Food</string>
+  <string name="symptom">Symptom</string>
+  <string name="name">Name</string>
+  <string name="delete">Delete</string>
+  <string name="textview">TextView</string>
+  <string name="search">Search</string>
+  <string name="contact_us">Contact Us</string>
+  <string name="insert_symptom">Insert Symptom</string>
+  <string name="insert_food">Insert Food</string>
+  <string name="food_results">Food Results</string>
+  <string name="symptom_results">Symptom Results</string>
 </resources>
