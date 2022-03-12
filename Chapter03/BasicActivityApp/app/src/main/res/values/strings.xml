@@ -1,0 +1,13 @@
+<resources>
+  <string name="app_name">Basic Activity App</string>
+  <string name="action_settings">Settings</string>
+  <!-- Strings used for fragments for navigation -->
+  <string name="first_fragment_label">First Fragment</string>
+  <string name="second_fragment_label">Second Fragment</string>
+  <string name="next">Next</string>
+  <string name="previous">Previous</string>
+
+  <string name="hello_first_fragment">This app provided by Jason Starling!</string>
+  <string name="hello_second_fragment">Jason Starling gets an A!</string>
+  <string name="floatingActionButtonCD">Send an e-mail</string>
+</resources>

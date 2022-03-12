@@ -1,0 +1,20 @@
+<resources>
+  <string name="app_name">Exploring Layouts</string>
+  <string name="TextViewMenuText">Menu</string>
+  <string name="constraintLayoutImageViewCD">A sample image as part of our ConstraintLayout</string>
+  <string name="constraintLayoutTextViewText">Back to the menu</string>
+  <string name="ButtonLoadText">LOAD</string>
+  <string name="LinearLayoutEditTextText">Select a layout type to view an example. The onClick attribute of each button will call a method which executes setContentView to load the new layout.</string>
+  <string name="ConstraintLayoutLoadText">Load ConstraintLayout</string>
+  <string name="TableLayoutLoadText">Load TableLayout</string>
+  <string name="india">India</string>
+  <string name="england">England</string>
+  <string name="first_innings">1st innings</string>
+  <string name="second_innings">2nd innings</string>
+  <string name="india_first_innings">212</string>
+  <string name="england_first_innings">704</string>
+  <string name="india_second_innings">134</string>
+  <string name="england_second_innings">563</string>
+  <string name="menu">Menu</string>
+  <string name="textMultiLineHint">Instructions for loading other layouts.</string>
+</resources>
