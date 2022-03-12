@@ -19,6 +19,7 @@ public class SearchFragment extends Fragment {
     Button btnSearch = v.findViewById(R.id.btnSearch);
     final EditText editSearch = v.findViewById(R.id.editSearch);
     final TextView textResult = v.findViewById(R.id.textResult);
+    // TODO: Change to RadioButtons that select Food XOR Symptom
     final CheckBox checkBoxFood = v.findViewById(R.id.checkBoxFood);
     final CheckBox checkBoxSymptom = v.findViewById(R.id.checkBoxSymptom);
 

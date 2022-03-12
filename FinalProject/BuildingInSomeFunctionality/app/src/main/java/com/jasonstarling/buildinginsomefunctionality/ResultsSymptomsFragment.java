@@ -29,7 +29,7 @@ public class ResultsSymptomsFragment extends Fragment {
     while (c.moveToNext()) {
       // Add the results to the String
       // with a little formatting
-      list.append(c.getString(1)).append(" - ").append(c.getString(2)).append("\n");
+      list.append(c.getString(1)).append("\n");
     }
 
     // Display the String in the TextView

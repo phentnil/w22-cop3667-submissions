@@ -48,7 +48,7 @@ public class DataManager {
       // Should not happen
       Log.e("insert", "DataType not equal to FOOD nor SYMPTOM: " + dt);
     }
-    query += " (" + TABLE_ROW_NAME + ") VALUES (" + name + ");";
+    query += " (" + TABLE_ROW_NAME + ") VALUES ('" + name + "');";
     Log.i("insert() = ", query);
     db.execSQL(query);
   }
@@ -90,7 +90,7 @@ public class DataManager {
     String query = "SELECT " +
       TABLE_ROW_ID + ", " +
       TABLE_ROW_NAME +
-      " from ";
+      " FROM ";
     if (dt.equals(DataType.FOOD)) {
       query += TABLE_FOOD;
     } else if (dt.equals(DataType.SYMPTOM)) {
@@ -99,7 +99,9 @@ public class DataManager {
       // Should not happen
       Log.e("selectAll", "DataType not equal to FOOD nor SYMPTOM: " + dt);
     }
-    query += " WHERE " + TABLE_ROW_NAME + " = '" + name + "';";
+    // TODO: Change query to where name contains the string input `name REGEXP '{name}'`
+    //query += " WHERE " + TABLE_ROW_NAME + " = '" + name + "';";
+    query += " WHERE " + TABLE_ROW_NAME + " REGEXP '" + name + "';";
     Log.i("searchName() = ", query);
     return db.rawQuery(query, null);
   }

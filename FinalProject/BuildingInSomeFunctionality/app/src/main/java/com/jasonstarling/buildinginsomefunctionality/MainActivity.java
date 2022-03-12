@@ -16,6 +16,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+  /* Todo: Create two columns; one for food entries, other for symptoms
+   *
+   * Suggestion from Final Project - Designing the User Interface:
+   *
+   * I just wanted to take a sec to say that, as a person with about 50 billion food
+   * sensitivities, I truly appreciate your app! It would be super cool if your View
+   * buttons could do "View By Food" and "View By Symptom" and show a two column
+   * sorted list with Food | Symptom, instead of just viewing entered foods or
+   * entered symptoms. Maybe storing foods in one array and symptoms in another?
+   * Either way, I really like where you're headed!!
+   *  */
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
