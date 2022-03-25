@@ -55,12 +55,11 @@ public class MainActivity extends Activity {
   }
 
   void drawRotatedBitmaps() {
-    float rotation;
     int horizontalPosition = 350;
     int verticalPosition = 25;
     Matrix matrix = new Matrix();
     Bitmap rotatedBitmap;
-    for (rotation = 0; rotation < 360; rotation += 30) {
+    for (float rotation = 0; rotation < 360; rotation += 30) {
       matrix.reset();
       matrix.preRotate(rotation);
       rotatedBitmap = Bitmap.createBitmap(bobBitmap, 0, 0, bobBitmap.getWidth() - 1, bobBitmap.getHeight() - 1, matrix, true);
