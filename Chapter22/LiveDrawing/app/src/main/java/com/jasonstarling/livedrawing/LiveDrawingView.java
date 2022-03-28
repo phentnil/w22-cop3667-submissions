@@ -71,7 +71,7 @@ public class LiveDrawingView extends SurfaceView implements Runnable {
 
     // Initialize the two buttons
     mResetButton = new RectF(0, 0, 100, 100);
-    mTogglePauseButton = new RectF(0, 150, 100, 250);
+    mTogglePauseButton = new RectF(150, 0, 250, 100);
 
     // Initialize the particles and their systems
     for (int i = 0; i < MAX_SYSTEMS; i++) {
@@ -147,8 +147,15 @@ public class LiveDrawingView extends SurfaceView implements Runnable {
       }
 
       // Draw the buttons
+      // Set the reset button to red
+      mPaint.setColor(Color.argb(255, 255, 0, 0));
       mCanvas.drawRect(mResetButton, mPaint);
+      // Set the toggle pause button to green
+      mPaint.setColor(Color.argb(255, 0, 255, 0));
       mCanvas.drawRect(mTogglePauseButton, mPaint);
+
+      // Reset color to white
+      mPaint.setColor(Color.argb(255, 255, 255, 255));
 
       if (DEBUGGING) {
         // Draw the HUD
