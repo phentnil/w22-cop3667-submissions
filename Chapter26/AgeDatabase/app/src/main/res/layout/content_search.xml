@@ -9,7 +9,7 @@
     android:layout_height="wrap_content"
     android:ems="10"
     android:inputType="textPersonName"
-    android:text="@string/name" />
+    android:hint="@string/name" />
 
   <Button
     android:id="@+id/btnSearch"

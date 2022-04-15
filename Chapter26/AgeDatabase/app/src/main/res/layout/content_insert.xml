@@ -9,7 +9,7 @@
     android:layout_height="wrap_content"
     android:ems="10"
     android:inputType="textPersonName"
-    android:text="@string/name" />
+    android:hint="@string/name" />
 
   <EditText
     android:id="@+id/editAge"
@@ -17,7 +17,7 @@
     android:layout_height="wrap_content"
     android:ems="10"
     android:inputType="textPersonName"
-    android:text="@string/age" />
+    android:hint="@string/age" />
 
   <Button
     android:id="@+id/btnInsert"
