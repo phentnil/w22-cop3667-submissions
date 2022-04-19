@@ -11,4 +11,14 @@
   <string name="view_entries">View Entries</string>
   <string name="add_entries">Add Entries</string>
   <string name="ok_button">OK</string>
+  <string name="show_foods">Show foods</string>
+  <string name="show_symptoms">Show symptoms</string>
+  <string name="action_settings">Settings</string>
+  <string name="nav_header_desc">Navigation header</string>
+  <string name="nav_header_title">Android Studio</string>
+  <string name="nav_header_subtitle">android.studio@android.com</string>
+  <string name="food">Food</string>
+  <string name="add_food">Add Food</string>
+  <string name="navigation_drawer_open">Open navigation drawer</string>
+  <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

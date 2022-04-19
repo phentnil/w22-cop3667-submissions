@@ -35,7 +35,7 @@ public class DialogNewSymptomEntry extends DialogFragment {
 
       MainActivity callingActivity = (MainActivity) getActivity();
       assert callingActivity != null;
-      callingActivity.createNewSymptom(newSymptom);
+      //callingActivity.createNewSymptom(newSymptom);
 
       dismiss();
     });

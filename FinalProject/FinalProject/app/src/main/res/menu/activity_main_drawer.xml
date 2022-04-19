@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:showIn="navigation_view">
+  <item
+    android:id="@+id/nav_add_food"
+    android:title="@string/new_food" />
+  <item
+    android:id="@+id/nav_add_symptom"
+    android:title="@string/new_symptom" />
+  <item
+    android:id="@+id/nav_show_foods"
+    android:title="@string/show_foods" />
+  <item
+    android:id="@+id/nav_show_symptoms"
+    android:title="@string/show_symptoms" />
+
+</menu>

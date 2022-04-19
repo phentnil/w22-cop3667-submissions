@@ -35,7 +35,7 @@ public class DialogNewFoodEntry extends DialogFragment {
 
       MainActivity callingActivity = (MainActivity) getActivity();
       assert callingActivity != null;
-      callingActivity.createNewFood(newFood);
+      //callingActivity.createNewFood(newFood);
 
       dismiss();
     });

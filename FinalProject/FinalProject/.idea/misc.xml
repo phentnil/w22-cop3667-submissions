@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/w22-cop3667-submissions/FinalProject/FinalProject/app/src/main/res/layout-land/activity_main.xml" value="0.4817708333333333" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/w22-cop3667-submissions/FinalProject/FinalProject/app/src/main/res/layout/activity_food_entry_add.xml" value="0.34074074074074073" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/w22-cop3667-submissions/FinalProject/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/w22-cop3667-submissions/FinalProject/FinalProject/app/src/main/res/layout/activity_main2.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/w22-cop3667-submissions/FinalProject/FinalProject/app/src/main/res/layout/activity_symptom_entry_add.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/w22-cop3667-submissions/FinalProject/FinalProject/app/src/main/res/layout/app_bar_main.xml" value="0.1390625" />
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/w22-cop3667-submissions/FinalProject/FinalProject/app/src/main/res/layout/content_add_food.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/w22-cop3667-submissions/FinalProject/FinalProject/app/src/main/res/layout/content_entry.xml" value="0.1390625" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/w22-cop3667-submissions/FinalProject/FinalProject/app/src/main/res/layout/content_main.xml" value="0.33" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/w22-cop3667-submissions/FinalProject/FinalProject/app/src/main/res/layout/content_settings.xml" value="0.1480978260869565" />
